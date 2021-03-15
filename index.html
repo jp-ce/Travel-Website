@@ -9,16 +9,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.min.css" />
+    <script defer src="js/index.js" type="module"></script>
+
     <title>Welcome to the Philippines!</title>
   </head>
   <body>
-    <!-- <div class="navbar-icon open-navbar-icon center">
-        <div class="line dark-blue-bg"></div>
-        <div class="line danger-bg"></div>
-        <div class="line light-color-bg"></div>
-        <div class="line yellow-bg"></div>
-      </div> -->
-
     <!---------------------------- Landing --------------------------------->
     <header class="landing center upper-case">
       <div class="landing-heading">
@@ -94,91 +89,11 @@
       <div class="carousel-container">
         <div class="carousel show" id="carousel-1">
           <div class="carousel-img-wrapper">
-            <img src="img/palawan-img.jpg" alt="" />
+            <img id="tour-image" src="img/palawan-img.jpg" alt="" />
           </div>
           <div class="carousel-info light-color">
-            <h2 class="txt-lg cursive">Palawan</h2>
-            <p class="txt-md">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam,
-              iste.
-            </p>
-            <a href="" class="center txt-md darker-light-color btn btn-header"
-              >Discover Now</a
-            >
-          </div>
-        </div>
-
-        <div class="carousel" id="carousel-2">
-          <div class="carousel-img-wrapper">
-            <img src="img/bicol-img.jpg" alt="" />
-          </div>
-          <div class="carousel-info light-color">
-            <h2 class="txt-lg cursive">Bicol</h2>
-            <p class="txt-md">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam,
-              iste.
-            </p>
-            <a href="" class="center txt-md darker-light-color btn btn-header"
-              >Discover Now</a
-            >
-          </div>
-        </div>
-
-        <div class="carousel" id="carousel-3">
-          <div class="carousel-img-wrapper">
-            <img src="img/cebu.jpg" alt="" />
-          </div>
-          <div class="carousel-info light-color">
-            <h2 class="txt-lg cursive">Cebu</h2>
-            <p class="txt-md">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam,
-              iste.
-            </p>
-            <a href="" class="center txt-md darker-light-color btn btn-header"
-              >Discover Now</a
-            >
-          </div>
-        </div>
-
-        <div class="carousel" id="carousel-4">
-          <div class="carousel-img-wrapper">
-            <img src="img/bohol-img.jpg" alt="" />
-          </div>
-          <div class="carousel-info light-color">
-            <h2 class="txt-lg cursive">Bohol</h2>
-            <p class="txt-md">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam,
-              iste.
-            </p>
-            <a href="" class="center txt-md darker-light-color btn btn-header"
-              >Discover Now</a
-            >
-          </div>
-        </div>
-
-        <div class="carousel" id="carousel-5">
-          <div class="carousel-img-wrapper">
-            <img src="img/boracay-img.jpg" alt="" />
-          </div>
-          <div class="carousel-info light-color">
-            <h2 class="txt-lg cursive">Boracay</h2>
-            <p class="txt-md">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam,
-              iste.
-            </p>
-            <a href="" class="center txt-md darker-light-color btn btn-header"
-              >Discover Now</a
-            >
-          </div>
-        </div>
-
-        <div class="carousel" id="carousel-6">
-          <div class="carousel-img-wrapper">
-            <img src="img/city-tour.jpg" alt="" />
-          </div>
-          <div class="carousel-info light-color">
-            <h2 class="txt-lg cursive">Manila</h2>
-            <p class="txt-md">
+            <h2 class="txt-lg cursive" id="destination">Palawan</h2>
+            <p class="txt-md" id="description">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam,
               iste.
             </p>
@@ -212,69 +127,7 @@
       </div>
 
       <div class="testimony-wrapper center">
-        <div class="testimony">
-          <div class="testimony-info">
-            <img src="img/person_1.jpg" alt="" />
-            <div class="name txt-sm">Full name</div>
-            <div class="stars txt-lg">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h2 class="txt-md">Bucket List Worthy!</h2>
-            <p class="txt-sm">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consectetur, laudantium dicta laborum suscipit aperiam deleniti
-              cupiditate reprehenderit pariatur officiis fugiat?
-            </p>
-          </div>
-        </div>
-
-        <div class="testimony">
-          <div class="testimony-info">
-            <img src="img/person_2.jpg" alt="" />
-            <div class="name txt-sm">Full name</div>
-            <div class="stars txt-lg">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h2 class="txt-md">Truly unforgettable</h2>
-
-            <p class="txt-sm">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consectetur, laudantium dicta laborum suscipit aperiam deleniti
-              cupiditate reprehenderit pariatur officiis fugiat?
-            </p>
-          </div>
-        </div>
-
-        <div class="testimony">
-          <div class="testimony-info">
-            <img src="img/person_3.jpg" alt="" />
-            <div class="name txt-sm">Full name</div>
-            <div class="stars txt-lg">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-            <h2 class="txt-md">I enjoyed this great tour</h2>
-            <p class="txt-sm">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consectetur, laudantium dicta laborum suscipit aperiam deleniti
-              cupiditate reprehenderit pariatur officiis fugiat?
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="img-wrapper">
-        <!-- <img src="img/welcome-bg.jpg" alt="" /> -->
+        <!-- add testimonies here dynamically -->
       </div>
     </section>
 
@@ -283,12 +136,6 @@
         <div class="img-wrapper">
           <img src="img/contact-bg.jpg" alt="" />
         </div>
-
-        <!-- <div class="line-through"></div> -->
-
-        <!-- <a href="" class="btn-subscribe center txt-xlg darker-light-color btn"
-          >Subscribe<i class="fas fa-chevron-right"></i
-        ></a> -->
 
         <div class="contacts-info center">
           <h1 class="txt-lg">Get in touch with us</h1>
@@ -316,7 +163,7 @@
     </section>
 
     <footer class="center light-color">
-      <p class="txt-sm">Copyright &copy; 2020</p>
+      <p class="txt-sm" id="copyright-date">Copyright &copy; 2020</p>
       <p class="txt-sm">Website by Jp.ev</p>
     </footer>
 
@@ -324,6 +171,5 @@
       src="https://kit.fontawesome.com/1606c86f1d.js"
       crossorigin="anonymous"
     ></script>
-    <script src="js/index.js"></script>
   </body>
 </html>

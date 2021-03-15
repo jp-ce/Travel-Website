@@ -1,65 +1,74 @@
+import { tours, testimonies } from "./data.js";
+
 //Buttons
 const prevBtn = document.querySelector("#prevBtn");
 const nextBtn = document.querySelector("#nextBtn");
 
-const carousel1 = document.getElementById("carousel-1");
-const carousel2 = document.getElementById("carousel-2");
-const carousel3 = document.getElementById("carousel-3");
-const carousel4 = document.getElementById("carousel-4");
-const carousel5 = document.getElementById("carousel-5");
-const carousel6 = document.getElementById("carousel-6");
+const img = document.getElementById("tour-image");
+const destination = document.getElementById("destination");
+const description = document.getElementById("description");
 
-//Event handlers
-nextBtn.addEventListener("click", () => {
-  goForward();
+const testimonial = document.querySelector(".testimony-wrapper");
+const date = document.getElementById("copyright-date");
+
+let currentItem = 0;
+
+window.addEventListener("DOMContentLoaded", function () {
+  const item = tours[currentItem];
+  img.src = item.image;
+  destination.textContent = item.destination;
+  description.textContent = item.description;
 });
+
+// //Set copyright date
+// date.textContent = new Date().getFullYear();
+const showTour = (tour) => {
+  const item = tours[tour];
+  img.src = item.image;
+  destination.textContent = item.destination;
+  description.textContent = item.description;
+};
 
 prevBtn.addEventListener("click", () => {
-  goBackward();
+  currentItem--;
+  if (currentItem < 0) {
+    currentItem = tours.length - 1;
+  }
+  showTour(currentItem);
 });
 
-const goForward = () => {
-  if (carousel1.classList.contains("show")) {
-    carousel1.classList.remove("show");
-    carousel2.classList.add("show");
-  } else if (carousel2.classList.contains("show")) {
-    carousel2.classList.remove("show");
-    carousel3.classList.add("show");
-  } else if (carousel3.classList.contains("show")) {
-    carousel3.classList.remove("show");
-    carousel4.classList.add("show");
-  } else if (carousel4.classList.contains("show")) {
-    carousel4.classList.remove("show");
-    carousel5.classList.add("show");
-  } else if (carousel5.classList.contains("show")) {
-    carousel5.classList.remove("show");
-    carousel6.classList.add("show");
-  } else if (carousel6.classList.contains("show")) {
-    carousel6.classList.remove("show");
-    carousel1.classList.add("show");
+nextBtn.addEventListener("click", () => {
+  currentItem++;
+  if (currentItem > tours.length - 1) {
+    currentItem = 0;
   }
-};
+  showTour(currentItem);
+});
 
-const goBackward = () => {
-  if (carousel6.classList.contains("show")) {
-    carousel6.classList.remove("show");
-    carousel5.classList.add("show");
-  } else if (carousel5.classList.contains("show")) {
-    carousel5.classList.remove("show");
-    carousel4.classList.add("show");
-  } else if (carousel4.classList.contains("show")) {
-    carousel4.classList.remove("show");
-    carousel3.classList.add("show");
-  } else if (carousel3.classList.contains("show")) {
-    carousel3.classList.remove("show");
-    carousel2.classList.add("show");
-  } else if (carousel2.classList.contains("show")) {
-    carousel2.classList.remove("show");
-    carousel1.classList.add("show");
-  } else if (carousel1.classList.contains("show")) {
-    carousel1.classList.remove("show");
-    carousel6.classList.add("show");
-  }
-};
+// testimonials
 
-//code very repetitive and tedious. come back and improve
+testimonial.innerHTML = testimonies
+  .map((testimonial) => {
+    const { image, name, heading, stars, review } = testimonial;
+    const icon = `<i class="fas fa-star"></i>`;
+    const numberOFStars = icon.repeat(stars);
+
+    return `<div class="testimony">
+  <div class="testimony-info">
+    <img src=${image} alt=${name} />
+    <div class="name txt-sm">${name}</div>
+    <div class="stars txt-lg">
+      
+    ${numberOFStars}
+    </div>
+    <h2 class="txt-md">${heading}</h2>
+    <p class="txt-sm">
+    ${review}
+    </p>
+  </div>
+</div>`;
+  })
+  .join("");
+
+//dynamically set the date
+date.textContent = new Date().getFullYear();
